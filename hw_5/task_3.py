@@ -1,6 +1,6 @@
 import string
 
-input_str = "i like python community!"
+input_str = "t!e@s#t t%e^s&t"
 
 # Заменяю string.punctuation на ""
 for char in string.punctuation:
