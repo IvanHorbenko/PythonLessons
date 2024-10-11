@@ -2,7 +2,7 @@ import string
 
 input_str = "i like python community!"
 
-# Удаляю string.punctuation
+# Заменяю string.punctuation на ""
 for char in string.punctuation:
     input_str = input_str.replace(char, "")
 
