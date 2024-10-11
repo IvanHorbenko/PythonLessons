@@ -7,6 +7,7 @@ import random
 # Генерация случайного количества элементов от 3 до 10
 NUMS_SIZE = random.randint(3, 10)
 numbers = []
+test = "test"
 
 #  Заполняем список случайными числами
 for i in range(NUMS_SIZE):
