@@ -1,4 +1,4 @@
-text = "_Ivan"
+text = "Should, I. subscribe? Yes!"
 
 
 # isalpha(): повертає True, якщо рядок складається лише з алфавітних символів
@@ -45,6 +45,6 @@ print(text.title())
 
 print(text.capitalize())
 
-user_str = "_name"
+
 
 

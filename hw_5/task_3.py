@@ -1,0 +1,24 @@
+import string
+
+input_str = "i like python community!"
+
+# Удаляю string.punctuation
+for char in string.punctuation:
+    input_str = input_str.replace(char, "")
+
+# Разделяем строку на слова
+split_words = input_str.split()
+
+# Делаем каждое слово с заглавной буквы
+result = ""
+for word in split_words:
+    result += word.capitalize()
+
+# Добавляем символ '#' в начало строки
+input_str = "#" + result
+
+# Обрезаем если итогово больше 140
+if len(input_str) > 140:
+    input_str = input_str[:140]
+
+print(input_str)
