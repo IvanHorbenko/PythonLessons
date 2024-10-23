@@ -1,23 +1,30 @@
+# Получаем ввод от пользователя
+user_input = input("Введите количество секунд от 0 до 8640000: ")
 
-seconds = int(input("Введите значение seconds : "))
+# Проверяем, что введено число и оно в нужном диапазоне
+if user_input.isdigit() and 0 <= int(user_input) < 8640000:
+    seconds = int(user_input)  # Присваиваем значение переменной seconds
 
+    # Переводим секунды в дни, часы, минуты и секунды
+    days = seconds // 86400  # Считаем количество полных дней
+    seconds %= 86400  # Оставшиеся секунды после вычитания дней
 
-days = seconds // 86400
-seconds %= 86400
+    hours = seconds // 3600  # Считаем количество полных часов
+    seconds %= 3600  # Оставшиеся секунды после вычитания часов
 
-hours = seconds // 3600
-seconds %= 3600
+    minutes = seconds // 60  # Считаем количество полных минут
+    seconds %= 60  # Оставшиеся секунды
 
-minutes = seconds // 60
-seconds %= 60
+    # Определяем, какое слово использовать для "день"
+    if days % 10 == 1 and days % 100 != 11:
+        day_word = "день"
+    elif 2 <= days % 10 <= 4 and (days % 100 < 10 or days % 100 >= 20):
+        day_word = "дня"
+    else:
+        day_word = "дней"
 
-if days % 10 == 1 and days % 100 != 11:
-    day_word = "день"
-elif 2 <= days % 10 <= 4 and (days % 100 < 10 or days % 100 >= 20):
-    day_word = "дня"
+    # Форматируем вывод
+    final_time = f"{days} {day_word}, {str(hours).zfill(2)}:{str(minutes).zfill(2)}:{str(seconds).zfill(2)}"
+    print(final_time)
 else:
-    day_word = "дней"
-
-
-final_time = f"{days} {day_word}, {str(hours).zfill(2)}:{str(minutes).zfill(2)}:{str(seconds).zfill(2)}"
-print(final_time)
+    print("Пожалуйста, введите число от 0 до 8640000.")
