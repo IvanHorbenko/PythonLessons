@@ -12,8 +12,7 @@ class Counter:
         self.max_value = max_value
 
     def set_current(self, start):
-        if not (self.min_value <= start <= self.max_value):
-            raise ValueError("Current value must be between minimum and maximum.")
+
         self.current = start
 
     def set_max(self, max_max):
